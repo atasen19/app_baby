@@ -32,7 +32,7 @@ class ImageAndIcons extends StatelessWidget {
             Expanded(
               child: Padding(
                 padding:
-                    const EdgeInsets.symmetric(vertical: kDefaultPadding * 3),
+                    const EdgeInsets.symmetric(vertical: kDefaultPadding * 5),
                 child: Column(
                   children: <Widget>[
                     Align(
@@ -87,13 +87,15 @@ class ImageAndIcons extends StatelessWidget {
               ),
             ),
             Container(
-              height: size.height * 0.8,
-              width: size.width * 0.75,
+              height: size.height * 0.5,
+              width: size.width * 0.8,
+              margin: EdgeInsets.only(top: 90),
+              padding: EdgeInsets.only(top: 200),
               decoration: BoxDecoration(
                 border: Border.all(color: kPrimaryColor, width: 2),
                 borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(63),
-                  bottomLeft: Radius.circular(63),
+                  topLeft: Radius.circular(100),
+                  bottomLeft: Radius.circular(100),
                 ),
                 boxShadow: [
                   BoxShadow(
