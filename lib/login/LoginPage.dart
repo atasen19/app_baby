@@ -38,11 +38,18 @@ class _LoginPageState extends State<LoginPage> {
     passwordController.addListener(onChange);
 
     final logo = Hero(
-      tag: 'hero',
-      child: CircleAvatar(
-        backgroundColor: kPrimaryColor,
-        radius: 48.0,
-      ),
+        tag: 'hero',
+        child: CircleAvatar(
+          backgroundColor: Colors.transparent,
+          child: SizedBox(
+              width: 90,
+              height: 90,
+              child: ClipOval(
+                child: Image.asset("assets/image/baby-icon.png",
+                ),
+              )
+          ),
+        )
     );
 
     final errorMessage = Padding(
@@ -141,38 +148,41 @@ class _LoginPageState extends State<LoginPage> {
     );
 
     return Scaffold(
-        backgroundColor: kSecondaryColor,
-        body: Center(
-          child: Form(
-            key: _formKey,
-            child: ListView(
-              shrinkWrap: true,
-              padding: EdgeInsets.only(left: 24.0, right: 24.0),
-              children: <Widget>[
-                logo,
-                SizedBox(height: 24.0),
-                Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: Text(
-                    'Giriş Yap',
-                    style: TextStyle(
-                        color: kPrimaryColor,
-                        fontSize: 45.0,
-                        fontFamily: 'ScrambledTofu'),
-                    textAlign: TextAlign.center,
-                  ),
+            backgroundColor: kBackgroundColor,
+            body: Center(
+              child: Form(
+                key: _formKey,
+                child: ListView(
+                  shrinkWrap: true,
+                  padding: EdgeInsets.only(left: 24.0, right: 24.0),
+                  children: <Widget>[
+                    logo,
+                    SizedBox(height: 35.0),
+                    Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Text(
+                        'Giriş Yap',
+                        style: TextStyle(
+                            color: kPrimaryColor,
+                            fontSize: 45.0,
+                            fontFamily: 'ScrambledTofu'),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                    errorMessage,
+                    SizedBox(height: 12.0),
+                    email,
+                    SizedBox(height: 8.0),
+                    password,
+                    SizedBox(height: 24.0),
+                    loginButton,
+                  ],
                 ),
-                errorMessage,
-                SizedBox(height: 12.0),
-                email,
-                SizedBox(height: 8.0),
-                password,
-                SizedBox(height: 24.0),
-                loginButton,
-              ],
-            ),
-          ),
-        ));
+              ),
+      ),
+    );
+
+
   }
 
   void signIn(String email, String password) async {

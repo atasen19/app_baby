@@ -120,11 +120,11 @@ class AddBabyScreenState extends State<AddBabyScreen> {
                   width: 80,
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      foregroundColor: Colors.transparent,
+                      backgroundColor: kPrimaryColor,
                       shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(9.0)),
+                          borderRadius: BorderRadius.circular(90.0)),
                     ),
-                    child: Icon(Icons.check, color: kPrimaryColor),
+                    child: Icon(Icons.check, color: Colors.white),
                     onPressed: () async {
                       if (butonKapat == 1) {
                         butonKapat = 0;

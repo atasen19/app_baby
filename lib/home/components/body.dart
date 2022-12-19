@@ -144,9 +144,9 @@ class BodyState extends State<Body> {
           child: Container(
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
-                foregroundColor: kPrimaryColor,
+                backgroundColor: kPrimaryColor,
                 shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(24)),
+                    borderRadius: BorderRadius.circular(40)),
               ),
               child: Icon(Icons.add, color: Colors.white),
               onPressed: () {
@@ -155,7 +155,7 @@ class BodyState extends State<Body> {
                       "https://firebasestorage.googleapis.com/v0/b/appbaby-68c8d.appspot.com/o/images%2Fbebek2.jpg?alt=media&token=08e729d7-701d-47ad-bcd3-51e603e574d7",
                   name: "",
                   age: 0,
-                  gender: "Özel",
+                  gender: "Kız",
                   desc: "",
                   birthDay: 1637960400000,
                   ageOfBirth: 20,

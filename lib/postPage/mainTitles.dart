@@ -54,15 +54,22 @@ class _MainTitlesState extends State<MainTitles> {
                 Visibility(
                   visible: visibiltyVariable,
                   child: Container(
-                    width: 80,
-                    height: 50,
+                    margin:EdgeInsets.only(top: 10, right: 10),
+                    width: 40,
+                    height: 40,
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        foregroundColor: Colors.transparent,
+                        backgroundColor: kPrimaryColor,
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(9.0)),
                       ),
-                      child: Icon(Icons.add, color: kPrimaryColor),
+                      // child: Icon(Icons.add, color: Colors.white, size: 10),
+                      child: Text("+",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                              color: Colors.white,
+                              fontFamily: "ScrambledTofu")),
                       onPressed: () async {
                         await showAlertDialogAdd(context);
                       },
@@ -82,7 +89,7 @@ class _MainTitlesState extends State<MainTitles> {
               ),
             ),
             const Divider(
-              color: Colors.lightGreen,
+              color: Colors.purple,
               height: 20,
               thickness: 3,
               indent: 20,
@@ -116,7 +123,8 @@ class _MainTitlesState extends State<MainTitles> {
                           shadowColor: Colors.transparent,
                           child: Container(
                             decoration: BoxDecoration(
-                              color: Colors.lightGreen.withOpacity(0.2),
+                              color: Colors.purple.withOpacity(0.2),
+                              borderRadius: BorderRadius.circular(20)
                             ),
                             child: ListTile(
                               onTap: () {

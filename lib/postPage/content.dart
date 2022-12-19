@@ -92,15 +92,16 @@ class _ContentState extends State<Content> {
                     Visibility(
                       visible: visibiltyVariable,
                       child: Container(
+                        margin: EdgeInsets.only(right: 5),
                         width: 60,
                         child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            foregroundColor: Colors.transparent,
+                            backgroundColor: kPrimaryColor,
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(9.0)),
                           ),
                           child: Icon(Icons.edit,
-                              color: kPrimaryColor, size: 30.0),
+                              color: Colors.white, size: 30.0),
                           onPressed: () {
                             setState(() {
                               if (textFieldVisibility == false) {
@@ -116,15 +117,16 @@ class _ContentState extends State<Content> {
                     Visibility(
                       visible: visibiltyVariable,
                       child: Container(
+                        margin: EdgeInsets.only(right: 5),
                         width: 60,
                         child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            foregroundColor: Colors.transparent,
+                            backgroundColor: kPrimaryColor,
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(9.0)),
                           ),
                           child: Icon(Icons.check,
-                              color: kPrimaryColor, size: 30.0),
+                              color: Colors.white, size: 30.0),
                           onPressed: () async {
                             post.baslik = textEditingControllerBaslik.text;
                             post.icerik = textEditingControllerIcerik.text;

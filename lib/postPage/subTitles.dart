@@ -56,15 +56,22 @@ class _SubTitlesState extends State<SubTitles> {
                 Visibility(
                   visible: visibiltyVariable,
                   child: Container(
-                    width: 80,
-                    height: 50,
+                    margin: EdgeInsets.only(right: 10),
+                    width: 40,
+                    height: 25,
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        foregroundColor: Colors.transparent,
+                        backgroundColor: kPrimaryColor,
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(9.0)),
                       ),
-                      child: Icon(Icons.add, color: kPrimaryColor),
+                      // child: Icon(Icons.add, color: Colors.white),
+                      child: Text("+",
+                          style: TextStyle(
+                              //fontWeight: FontWeight.bold,
+                              fontSize: 25,
+                              color: Colors.white,
+                              fontFamily: "ScrambledTofu")),
                       onPressed: () async {
                         showAlertDialogAdd(context);
                       },
@@ -75,7 +82,7 @@ class _SubTitlesState extends State<SubTitles> {
             ),
             Center(
               child: Container(
-                child: Text("Başlık Alt Sayfası",
+                child: Text("Alt İçerikler",
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 25,
