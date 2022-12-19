@@ -161,10 +161,10 @@ class _LoginPageState extends State<LoginPage> {
                     Padding(
                       padding: EdgeInsets.all(8.0),
                       child: Text(
-                        'Giriş Yap',
+                        'Prematüre Bebek Takip Uygulaması',
                         style: TextStyle(
                             color: kPrimaryColor,
-                            fontSize: 45.0,
+                            fontSize: 30.0,
                             fontFamily: 'ScrambledTofu'),
                         textAlign: TextAlign.center,
                       ),

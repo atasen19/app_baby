@@ -39,7 +39,7 @@ class MyAppState extends State<MyApp>{
     if(user == null){
       return MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Baby App',
+        title: 'Prematüre Bebek Takip',
         theme: ThemeData(
           scaffoldBackgroundColor: kBackgroundColor,
           primaryColor: kPrimaryColor,
@@ -52,7 +52,7 @@ class MyAppState extends State<MyApp>{
     }
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Baby App',
+      title: 'Prematüre Bebek Takip',
       theme: ThemeData(
         focusColor: kPrimaryColor,
         scaffoldBackgroundColor: kBackgroundColor,

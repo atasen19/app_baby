@@ -38,11 +38,17 @@ class MyDrawerState extends State<MyDrawer> {
               DrawerHeader(
                 child: CircleAvatar(
                   radius: 50,
-                  backgroundColor: kPrimaryColor,
+                  backgroundColor: kSecondaryColor,
                   child: CircleAvatar(
-                    //backgroundImage: AssetImage("assets/image/baby_0.png"),
                     backgroundColor: kSecondaryColor,
-                    radius: 48,
+                    child: SizedBox(
+                        width: 90,
+                        height: 90,
+                        child: ClipOval(
+                          child: Image.asset("assets/image/baby-icon.png",
+                          ),
+                        )
+                    ),
                   ),
                 ),
                 decoration: BoxDecoration(color: kSecondaryColor),
@@ -71,7 +77,7 @@ class MyDrawerState extends State<MyDrawer> {
                     title: Column(
                       children: [
                         Icon(Icons.input, color: kPrimaryColor),
-                        Text('Rehber Sayfası'),
+                        Text('Rehber'),
                       ],
                     ),
                     onTap: () async => {

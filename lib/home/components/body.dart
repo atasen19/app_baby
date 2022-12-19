@@ -80,13 +80,28 @@ class BodyState extends State<Body> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Text(
-                      'Hoşgeldiniz!',
+                    /* Text(
+                      'Merhaba sevgili anne :)',
                       style: Theme.of(context).textTheme.headlineSmall.copyWith(
                           color: kPrimaryColor,
                           fontSize: 30.0,
                           fontFamily: 'ScrambledTofu'),
-                    ),
+                    ),*/
+                    RichText(text: TextSpan(
+                      style: Theme.of(context).textTheme.headlineSmall.copyWith(
+                          color: kPrimaryColor,
+                          fontSize: 30.0,
+                          fontFamily: 'ScrambledTofu'
+                      ),
+                      children: [
+                        TextSpan(text: 'Merhaba sevgili anne '),
+                        WidgetSpan(child: Padding(
+                          padding: const EdgeInsets.only(bottom: 4.0),
+                          child: Icon(Icons.waving_hand_outlined, color: kPrimaryColor,),
+                        ),),
+                        //TextSpan(text: 'test'),
+                      ]
+                    )),
                     //Spacer(),
                     //CircleAvatar(backgroundImage: AssetImage("assets/image/baby_0.png"), radius: 32,) profil fotosu
                   ],

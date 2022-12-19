@@ -257,7 +257,7 @@ class AddBabyScreenState extends State<AddBabyScreen> {
                                         child: Text("İsim ve Doğum Tarihi",
                                             style: TextStyle(
                                                 color: kTextColorW,
-                                                fontSize: 30.0,
+                                                fontSize: 25.0,
                                                 fontFamily: 'ScrambledTofu')),
                                       ),
                                       height: myheight * .10,
@@ -350,7 +350,7 @@ class AddBabyScreenState extends State<AddBabyScreen> {
                                         child: Text("Cinsiyet",
                                             style: TextStyle(
                                                 color: kTextColorW,
-                                                fontSize: 30.0,
+                                                fontSize: 25.0,
                                                 fontFamily: 'ScrambledTofu')),
                                       ),
                                       height: myheight * .10,
@@ -438,7 +438,7 @@ class AddBabyScreenState extends State<AddBabyScreen> {
                                         child: Text("Hamilelik Süresi",
                                             style: TextStyle(
                                                 color: kTextColorW,
-                                                fontSize: 30.0,
+                                                fontSize: 25.0,
                                                 fontFamily: 'ScrambledTofu')),
                                       ),
                                       height: myheight * .10,
@@ -529,7 +529,7 @@ class AddBabyScreenState extends State<AddBabyScreen> {
                                         child: Text("Doğum Kilosu",
                                             style: TextStyle(
                                                 color: kTextColorW,
-                                                fontSize: 30.0,
+                                                fontSize: 25.0,
                                                 fontFamily: 'ScrambledTofu')),
                                       ),
                                       height: myheight * .10,
@@ -640,7 +640,7 @@ class AddBabyScreenState extends State<AddBabyScreen> {
                                         child: Text("Doğum Boyu",
                                             style: TextStyle(
                                                 color: kTextColorW,
-                                                fontSize: 30.0,
+                                                fontSize: 25.0,
                                                 fontFamily: 'ScrambledTofu')),
                                       ),
                                       height: myheight * .10,
@@ -753,7 +753,7 @@ class AddBabyScreenState extends State<AddBabyScreen> {
                                         child: Text("Baş Boyutu",
                                             style: TextStyle(
                                                 color: kTextColorW,
-                                                fontSize: 30.0,
+                                                fontSize: 25.0,
                                                 fontFamily: 'ScrambledTofu')),
                                       ),
                                       height: myheight * .10,

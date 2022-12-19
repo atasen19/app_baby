@@ -80,7 +80,7 @@ class _MainTitlesState extends State<MainTitles> {
             ),
             Center(
               child: Container(
-                child: Text("Rehber Sayfası",
+                child: Text("Rehber",
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 35,
@@ -143,15 +143,15 @@ class _MainTitlesState extends State<MainTitles> {
                                   array2[index].baslik,
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold,
-                                      fontSize: 20.0,
+                                      fontSize: 18.0,
                                       fontFamily: 'ScrambledTofu',
                                       color: kTextColorB),
                                 ),
                               ),
                               leading: Container(
                                   height: double.infinity,
-                                  child: Icon(Icons.circle_rounded,
-                                      color: kTextColorB, size: 13)),
+                                  child: Icon(Icons.baby_changing_station_outlined,
+                                      color: kTextColorB, size: 23)),
                               trailing: Row(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [

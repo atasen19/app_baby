@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.app_baby">
    <application
-        android:label="bebek takip"
+        android:label="Prematüre Bebek Takip"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

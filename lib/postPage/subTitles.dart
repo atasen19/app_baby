@@ -69,7 +69,7 @@ class _SubTitlesState extends State<SubTitles> {
                       child: Text("+",
                           style: TextStyle(
                               //fontWeight: FontWeight.bold,
-                              fontSize: 25,
+                              fontSize: 15,
                               color: Colors.white,
                               fontFamily: "ScrambledTofu")),
                       onPressed: () async {
@@ -89,6 +89,13 @@ class _SubTitlesState extends State<SubTitles> {
                         color: kTextColorB,
                         fontFamily: "ScrambledTofu")),
               ),
+            ),
+            const Divider(
+              color: Colors.purple,
+              height: 20,
+              thickness: 3,
+              indent: 20,
+              endIndent: 20,
             ),
             getSubtitleFutureBuilder(context),
           ],
@@ -117,7 +124,8 @@ class _SubTitlesState extends State<SubTitles> {
                           color: Colors.transparent,
                           shadowColor: Colors.transparent,
                           child: Container(
-                            decoration: BoxDecoration(),
+                            decoration: BoxDecoration(color: Colors.purple.withOpacity(0.2),
+                                borderRadius: BorderRadius.circular(20)),
                             child: ListTile(
                               onTap: () {
                                 Navigator.push(
@@ -141,8 +149,8 @@ class _SubTitlesState extends State<SubTitles> {
                               ),
                               leading: Container(
                                   height: double.infinity,
-                                  child: Icon(Icons.circle_rounded,
-                                      color: kTextColorB, size: 13)),
+                                  child: Icon(Icons.baby_changing_station_rounded,
+                                      color: kTextColorB, size: 23)),
                               trailing: Row(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
