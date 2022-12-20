@@ -4,6 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:plant_app/constants.dart';
 import 'package:plant_app/home/home_screen.dart';
+import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 // import 'package:plant_app/signup/SignUpPage.dart';
 
 class LoginPage extends StatefulWidget {
@@ -147,6 +148,21 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
 
+    String myVideoId = 'PQSagzssvUQ';
+    // the full url: https://www.youtube.com/watch?v=PQSagzssvUQ&ab_channel=NASA
+    // it's an interesting video from NASA on Youtube
+
+    // Initiate the Youtube player controller
+    final YoutubePlayerController _controller = YoutubePlayerController(
+      initialVideoId: myVideoId,
+      flags: const YoutubePlayerFlags(
+        autoPlay: true,
+        mute: false,
+      ),
+    );
+
+    // MyHomePage({Key? key}) : super(key: key);
+
     return Scaffold(
             backgroundColor: kBackgroundColor,
             body: Center(
@@ -176,7 +192,12 @@ class _LoginPageState extends State<LoginPage> {
                     password,
                     SizedBox(height: 24.0),
                     loginButton,
+                    YoutubePlayer(
+                      controller: _controller,
+                      liveUIColor: Colors.amber,
+                    )
                   ],
+
                 ),
               ),
       ),

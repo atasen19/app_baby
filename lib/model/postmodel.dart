@@ -7,6 +7,7 @@ class PostModel{
   String baslik;
   String icerik;
   String image;
+  String video_link;
 
   PostModel({
     this.parentId,
@@ -15,6 +16,7 @@ class PostModel{
     this.baslik,
     this.icerik,
     this.image,
+    this.video_link,
   });
 
   factory PostModel.fromFirestore(DocumentSnapshot documentSnapshot){
@@ -26,6 +28,7 @@ class PostModel{
       baslik: data["baslik"],
       icerik: data["icerik"],
       image: data ["image"],
+      video_link: data ["video_link"],
     );
   }
   Map<String,dynamic> toMap(){
@@ -35,7 +38,8 @@ class PostModel{
       'ana_baslik': ana_baslik,
       'baslik':baslik,
       'icerik':icerik,
-      'image':image
+      'image':image,
+      'video_link': video_link
     };
   }
 
@@ -46,7 +50,8 @@ class PostModel{
       ana_baslik: map['ana_baslik'],
       baslik: map['baslik'],
       icerik: map['icerik'],
-      image: map['image']
+      image: map['image'],
+      video_link: map['video_link']
     );
   }
 }

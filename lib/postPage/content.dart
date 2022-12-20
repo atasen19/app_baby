@@ -10,6 +10,7 @@ import 'package:plant_app/model/answer.dart';
 import 'package:plant_app/model/postmodel.dart';
 import 'package:plant_app/model/question.dart';
 import 'package:plant_app/postPage/questioninfo.dart';
+import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class Content extends StatefulWidget {
   final PostModel post;
@@ -37,6 +38,7 @@ class _ContentState extends State<Content> {
   List<bool> questionTextFieldVisibility = [];
   TextEditingController textEditingControllerBaslik = TextEditingController();
   TextEditingController textEditingControllerIcerik = TextEditingController();
+  TextEditingController textEditingControllerVideoLink = TextEditingController();
   List<TextEditingController> textEditingControllerSoru = [];
   TextEditingController textEditingControllerYeniSoru = TextEditingController();
   List<TextEditingController> textEditingControllerCevap = [];
@@ -69,6 +71,16 @@ class _ContentState extends State<Content> {
     post = widget.post;
     textEditingControllerIcerik.text = post.icerik;
     textEditingControllerBaslik.text = post.baslik;
+    textEditingControllerVideoLink.text = post.video_link;
+
+    // Initiate the Youtube player controller
+    final YoutubePlayerController _controller = YoutubePlayerController(
+      initialVideoId: post.video_link,
+      flags: const YoutubePlayerFlags(
+        autoPlay: true,
+        mute: false,
+      ),
+    );
 
     return Scaffold(
       backgroundColor: kSecondaryColor,
@@ -130,6 +142,7 @@ class _ContentState extends State<Content> {
                           onPressed: () async {
                             post.baslik = textEditingControllerBaslik.text;
                             post.icerik = textEditingControllerIcerik.text;
+                            post.video_link = textEditingControllerVideoLink.text;
                             String resimUrl = "";
                             if (_image.path == "") {
                               _image = await FirebaseService()
@@ -217,6 +230,15 @@ class _ContentState extends State<Content> {
                                   fontSize: 20,
                                   color: kTextColorB,
                                   fontFamily: "ScrambledTofu"))),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(
+                          left: 20, right: 20, bottom: 20),
+                      child: Container(
+                          child: YoutubePlayer(
+                            controller: _controller,
+                            liveUIColor: Colors.amber,
+                          ),),
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
