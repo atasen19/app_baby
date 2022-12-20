@@ -192,10 +192,10 @@ class _LoginPageState extends State<LoginPage> {
                     password,
                     SizedBox(height: 24.0),
                     loginButton,
-                    YoutubePlayer(
+                    /*YoutubePlayer(
                       controller: _controller,
                       liveUIColor: Colors.amber,
-                    )
+                    )*/
                   ],
 
                 ),

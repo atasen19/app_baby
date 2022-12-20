@@ -48,7 +48,21 @@ class _ContentState extends State<Content> {
   int sayac = 0;
   final picker = ImagePicker();
   User user = FirebaseAuth.instance.currentUser;
+  YoutubePlayerController _controller;
+
+  @override
   void initState() {
+    // Initiate the Youtube player controller
+    _controller = YoutubePlayerController(
+      initialVideoId: YoutubePlayer.convertUrlToId(post.video_link),
+      flags: const YoutubePlayerFlags(
+        autoPlay: false,
+        //disableDragSeek: true,
+        mute: false,
+        //loop: false,
+        // enableCaption: false
+      ),
+    );
     super.initState();
     setState(() {});
     getQuestions(post);
@@ -71,16 +85,7 @@ class _ContentState extends State<Content> {
     post = widget.post;
     textEditingControllerIcerik.text = post.icerik;
     textEditingControllerBaslik.text = post.baslik;
-    textEditingControllerVideoLink.text = post.video_link;
-
-    // Initiate the Youtube player controller
-    final YoutubePlayerController _controller = YoutubePlayerController(
-      initialVideoId: post.video_link,
-      flags: const YoutubePlayerFlags(
-        autoPlay: true,
-        mute: false,
-      ),
-    );
+    // String videoId = YoutubePlayer.convertUrlToId(post.video_link);
 
     return Scaffold(
       backgroundColor: kSecondaryColor,
@@ -231,15 +236,17 @@ class _ContentState extends State<Content> {
                                   color: kTextColorB,
                                   fontFamily: "ScrambledTofu"))),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(
-                          left: 20, right: 20, bottom: 20),
-                      child: Container(
+                    if(_controller.initialVideoId != null) ...[
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            left: 20, right: 20, bottom: 10),
+                        child: Container(
                           child: YoutubePlayer(
                             controller: _controller,
                             liveUIColor: Colors.amber,
                           ),),
-                    ),
+                      ),
+                    ],
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
@@ -248,13 +255,14 @@ class _ContentState extends State<Content> {
                           child: Container(
                             width: 80,
                             height: 50,
+                            margin: EdgeInsets.only(bottom: 40),
                             child: ElevatedButton(
                               style: ElevatedButton.styleFrom(
-                                foregroundColor: Colors.transparent,
+                                backgroundColor: kPrimaryColor,
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(29.0)),
                               ),
-                              child: Icon(Icons.add, color: kPrimaryColor),
+                              child: Icon(Icons.add, color: Colors.white),
                               onPressed: () async {
                                 showAlertDialogAdd(
                                   context,
